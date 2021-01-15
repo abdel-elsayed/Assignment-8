@@ -9,7 +9,7 @@ class App extends Component {
       numRows: 0,
       numCols: 1,
       currColor: "black",
-      selectedColor: "#f0e3ff"
+      selectedColor: "#8A2BE2"
     }
   }
   addRow = () => {
@@ -21,6 +21,15 @@ class App extends Component {
     this.setState({numCols: this.state.numCols+1})
 
   }
+
+  remCol = () => {
+    this.setState({numCols: this.state.numCols-1})
+  }
+
+  remRow = () => {
+    this.setState({numRows: this.state.numRows-1})
+  }
+
   changeColor = (e) => {
     this.setState({selectedColor:e.target.value});
   }
@@ -33,13 +42,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <button className="add-row-button" onClick={this.addRow}>Add Row</button>
-      <button className="add-col-button" onClick={this.addCol}>Add Col</button>
+      <button className="button1" onClick={this.addRow}>Add Row</button>
+      <button  className="button1" onClick={this.addCol}>Add Col</button>
+      <button  className="button1" onClick={this.remCol}>Remove Column</button>
+      <button  className="button1" onClick={this.remRow}>Remove Row</button>
       <select onChange ={this.changeColor}>
-        <option value="#f0e3ff">purple1</option>
-        <option value="limegreen">limegreen</option>
-        <option value="hotpink">hotpink</option>
-        <option value="PowderBlue">powderblue</option>
+        <option value="#8A2BE2">Purple</option>
+        <option value="#00FF00">Limegreen</option>
+        <option value="#FFFF00">Yellow</option>
+        <option value="#FF1493">Pink</option>
       </select>
       <Table numRows={this.state.numRows} numCols={this.state.numCols} 
        currentColor={this.state.currentColor} selectedColor={this.state.selectedColor} changeColor={this.changeColor} setCurrentColor={this.setCurrentColor}/>
