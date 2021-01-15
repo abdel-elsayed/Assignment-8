@@ -11,7 +11,7 @@ This project is part of Tech Talent Pipeline Full-Satck web-development bootcamp
 
 
 ## View project
-//codesandbox.io
+https://codesandbox.io/s/musing-mendel-ofxej
 
 ### Screenshot 
 
